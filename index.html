@@ -222,7 +222,6 @@
             display: none;
         }
 
-        /* Стили для страницы "Услуги" */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -326,17 +325,14 @@
             <h3 style="margin-top: 30px; margin-bottom: 20px;">Наша команда</h3>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/100" alt="Алексей Иванов">
                     <h4>Алексей Иванов</h4>
                     <p>Генеральный директор</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/100" alt="Мария Петрова">
                     <h4>Мария Петрова</h4>
                     <p>Технический директор</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/100" alt="Дмитрий Сидоров">
                     <h4>Дмитрий Сидоров</h4>
                     <p>Руководитель отдела продаж</p>
                 </div>
@@ -453,7 +449,7 @@
     </footer>
 
     <script>
-        // Получаем все страницы и ссылки навигации
+    
         const pages = document.querySelectorAll('.page');
         const navLinks = document.querySelectorAll('nav a');
         const modal = document.getElementById('modal');
@@ -463,20 +459,20 @@
         const successMessage = document.getElementById('successMessage');
         const scrollToFeedbackBtn = document.getElementById('scrollToFeedback');
 
-        // Функция переключения страниц
+     
         function showPage(pageId) {
-            // Скрываем все страницы
+       
             pages.forEach(page => {
                 page.classList.remove('active');
             });
             
-            // Показываем нужную страницу
+    
             const targetPage = document.getElementById(pageId);
             if (targetPage) {
                 targetPage.classList.add('active');
             }
             
-            // Обновляем активный пункт меню
+        
             navLinks.forEach(link => {
                 if (link.getAttribute('data-page') === pageId) {
                     link.classList.add('active');
@@ -484,22 +480,19 @@
                     link.classList.remove('active');
                 }
             });
-            
-            // Прокручиваем к началу страницы
+        
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         }
 
-        // Обработчики для навигации
         navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const pageId = this.getAttribute('data-page');
                 showPage(pageId);
-                
-                // Если это обратная связь — скроллим к кнопке формы (если она есть)
+             
                 if (pageId === 'feedback') {
                     setTimeout(() => {
                         const feedbackSection = document.querySelector('#feedback');
@@ -511,29 +504,24 @@
             });
         });
 
-        // Обработчик кнопки "Перейти к обратной связи" на главной
         scrollToFeedbackBtn.addEventListener('click', function() {
             showPage('feedback');
         });
 
-        // Модальное окно — открытие
         openModalButton.addEventListener('click', () => {
             modal.showModal();
         });
 
-        // Модальное окно — закрытие
         closeModalButton.addEventListener('click', () => {
             modal.close();
         });
 
-        // Закрытие по Escape
         modal.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 modal.close();
             }
         });
 
-        // Обработка отправки формы
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
@@ -545,7 +533,6 @@
             
             let isValid = true;
             
-            // Валидация
             [email, phone, date, service, message].forEach(field => {
                 if (!field.value.trim()) {
                     field.style.borderColor = 'red';
@@ -566,7 +553,6 @@
             }
         });
 
-        // Форматирование телефона
         const phoneInput = document.getElementById('phone');
         phoneInput.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
@@ -588,7 +574,6 @@
             e.target.value = formattedValue;
         });
 
-        // При загрузке — проверяем хэш в URL
         window.addEventListener('load', () => {
             const hash = window.location.hash.substring(1); // убираем #
             const validPages = ['home', 'about', 'services', 'contacts', 'feedback'];
@@ -600,7 +585,6 @@
             }
         });
 
-        // Обработка изменения хэша (назад/вперед в браузере)
         window.addEventListener('hashchange', () => {
             const hash = window.location.hash.substring(1);
             const validPages = ['home', 'about', 'services', 'contacts', 'feedback'];
