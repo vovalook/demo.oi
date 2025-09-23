@@ -29,11 +29,44 @@
             margin-bottom: 30px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
+        }
+        
+        .nav-container {
+            margin-top: 20px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 15px 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        nav a.active {
+            background-color: rgba(255, 255, 255, 0.3);
+            font-weight: 600;
         }
         
         .container {
@@ -152,7 +185,8 @@
         
         .close-btn {
             background: none;
-            border: none;color: white;
+            border: none;
+            color: white;
             font-size: 24px;
             position: absolute;
             top: 15px;
@@ -186,6 +220,11 @@
             h1 {
                 font-size: 2rem;
             }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -193,10 +232,22 @@
     <header>
         <h1>Форма обратной связи</h1>
         <p>Свяжитесь с нами удобным способом</p>
+        
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Главная</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                    <li><a href="#feedback">Обратная связь</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
     <div class="container">
-        <div class="info-section">
+        <div class="info-section" id="contacts">
             <h2>Наши контакты</h2>
             <p>Адрес: г. Москва, Василия Пупкина, д.3</p>
             <p>Телефон: +7 (495) 123-45-67</p>
@@ -204,7 +255,7 @@
             <p>Часы работы: Пн-Пт с 9:00 до 18:00</p>
         </div>
         
-        <div class="info-section">
+        <div class="info-section" id="feedback">
             <h2>Обратная связь</h2>
             <p>Заполните форму обратной связи, и наш специалист свяжется с вами в ближайшее время.</p>
             <p>Мы отвечаем на все запросы в течение 24 часов в рабочие дни.</p>
@@ -263,13 +314,38 @@
     </footer>
 
     <script>
-
         const modal = document.getElementById('modal');
         const openModalButton = document.getElementById('openModal');
         const closeModalButton = document.getElementById('closeModal');
         const contactForm = document.getElementById('contactForm');
-       
+        const successMessage = document.getElementById('successMessage');
         
+        // Навигация
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                // Убираем active со всех элементов
+                document.querySelectorAll('nav a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                // Добавляем active текущему элементу
+                this.classList.add('active');
+                
+                // Плавная прокрутка к якорю
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            });
+        });
       
         openModalButton.addEventListener('click', () => {
             modal.showModal();
@@ -336,10 +412,8 @@
             }
             
             if (isValid) {
-        
                 successMessage.style.display = 'block';
                 
-              
                 setTimeout(() => {
                     modal.close();
                     successMessage.style.display = 'none';
@@ -353,7 +427,6 @@
         phoneInput.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
             
-          
             let formattedValue = '+7';
             if (value.length > 1) {
                 formattedValue += ' (' + value.slice(1, 4);
