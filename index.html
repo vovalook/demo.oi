@@ -3,349 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Компания — Обратная связь</title>
-    <!-- Bootstrap CSS -->
+    <title>Главная — Эффективные Решения</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            --primary-color: #6a11cb;
         }
-
-        body {
-            background-color: #f5f7fa;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .hero-header {
+        .hero {
             background: var(--primary-gradient);
             color: white;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .hero-header h1 {
-            font-size: 2.3rem;
-        }
-
-        .page {
-            display: none;
-        }
-
-        .page.active {
-            display: block;
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .info-section {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            margin-bottom: 30px;
-        }
-
-        .service-card, .team-member {
-            transition: transform 0.3s;
-            height: 100%;
-        }
-
-        .service-card:hover, .team-member:hover {
-            transform: translateY(-5px);
-        }
-
-        .btn-custom {
-            background: var(--primary-gradient);
-            border: none;
-            padding: 14px 28px;
-            font-size: 18px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-custom:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .modal-header {
-            background: var(--primary-gradient);
-            color: white;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-        }
-
-        .modal-header .btn-close {
-            filter: invert(1);
-        }
-
-        .success-message {
-            display: none;
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
-            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
     </style>
 </head>
-<body>
-    <!-- Header -->
+<body class="bg-light">
     <div class="container py-4">
-        <header class="hero-header p-4 text-center">
+        <!-- Header -->
+        <header class="hero p-4 text-center mb-4">
             <h1>Компания "Эффективные Решения"</h1>
             <p class="opacity-90">Профессиональные IT-услуги для вашего бизнеса</p>
-
-            <!-- Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-transparent p-0 mt-3">
-                <div class="container-fluid justify-content-center">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                        <ul class="navbar-nav gap-2">
-                            <li class="nav-item"><a class="nav-link text-white" href="#" data-page="home">Главная</a></li>
-                            <li class="nav-item"><a class="nav-link text-white" href="#" data-page="about">О нас</a></li>
-                            <li class="nav-item"><a class="nav-link text-white" href="#" data-page="services">Услуги</a></li>
-                            <li class="nav-item"><a class="nav-link text-white" href="#" data-page="contacts">Контакты</a></li>
-                            <li class="nav-item"><a class="nav-link text-white" href="#" data-page="feedback">Обратная связь</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
         </header>
 
-        <!-- Pages -->
-        <div id="home" class="page active">
-            <div class="info-section">
-                <h2 class="text-primary">Добро пожаловать!</h2>
-                <p>Мы — команда профессионалов, предоставляющая широкий спектр IT-услуг для малого и среднего бизнеса. Наши решения помогут вам выйти на новый уровень эффективности и прибыльности.</p>
-                <p>Используйте навигацию выше, чтобы узнать больше о нас, наших услугах или связаться с нами.</p>
-                <button class="btn btn-custom w-100 mt-3" id="scrollToFeedback">Перейти к обратной связи</button>
-            </div>
-        </div>
-
-        <div id="about" class="page">
-            <div class="info-section">
-                <h2 class="text-primary">О нашей компании</h2>
-                <p>Компания "Эффективные Решения" основана в 2015 году и с тех пор успешно помогает бизнесу цифровой трансформации.</p>
-                <p>Наша миссия — предоставлять качественные, надежные и инновационные IT-решения, которые реально работают и приносят прибыль нашим клиентам.</p>
-
-                <h3 class="mt-4 mb-3">Наша команда</h3>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="team-member info-section text-center">
-                            <h4>Науменко Владимир</h4>
-                            <p class="text-muted">Генеральный директор</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team-member info-section text-center">
-                            <h4>Сотникова София</h4>
-                            <p class="text-muted">Технический директор</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team-member info-section text-center">
-                            <h4>Алимов Альберт</h4>
-                            <p class="text-muted">Руководитель отдела продаж</p>
-                        </div>
-                    </div>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white rounded mb-4 shadow-sm">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="nav">
+                    <ul class="navbar-nav gap-2">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                    </ul>
                 </div>
             </div>
+        </nav>
+
+        <!-- Content -->
+        <div class="info-section bg-white p-4 rounded shadow-sm">
+            <h2 class="text-primary">Добро пожаловать!</h2>
+            <p>Мы — команда профессионалов, предоставляющая широкий спектр IT-услуг для малого и среднего бизнеса. Наши решения помогут вам выйти на новый уровень эффективности и прибыльности.</p>
+            <p>Используйте навигацию выше, чтобы узнать больше о нас или связаться с нами.</p>
+            <a href="contacts.html" class="btn btn-primary mt-3">Перейти к обратной связи</a>
         </div>
 
-        <div id="services" class="page">
-            <div class="info-section">
-                <h2 class="text-primary">Наши услуги</h2>
-                <p>Мы предлагаем комплексные решения для вашего бизнеса. Все услуги выполняются квалифицированными специалистами с гарантией качества.</p>
-
-                <div class="row g-4 mt-2">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="service-card info-section">
-                            <h3 class="text-primary">Разработка сайтов</h3>
-                            <p>Создаем современные, адаптивные и удобные сайты под ваши задачи: от лендингов до интернет-магазинов и корпоративных порталов.</p>
-                            <p><strong>Сроки:</strong> от 7 дней<br><strong>Цена:</strong> от 30 000 руб.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="service-card info-section">
-                            <h3 class="text-primary">Тестирование ПО</h3>
-                            <p>Проводим полный цикл тестирования: функциональное, нагрузочное, юзабилити-тестирование.</p>
-                            <p><strong>Сроки:</strong> от 3 дней<br><strong>Цена:</strong> от 15 000 руб.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="service-card info-section">
-                            <h3 class="text-primary">Консультации</h3>
-                            <p>Экспертные консультации по выбору технологий, архитектуре решений, оптимизации процессов.</p>
-                            <p><strong>Сроки:</strong> от 1 дня<br><strong>Цена:</strong> от 5 000 руб./час</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="service-card info-section">
-                            <h3 class="text-primary">Поддержка и сопровождение</h3>
-                            <p>Обеспечиваем техническую поддержку 24/7, обновление систем, мониторинг и устранение неполадок.</p>
-                            <p><strong>Сроки:</strong> по договору<br><strong>Цена:</strong> от 20 000 руб./мес</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="contacts" class="page">
-            <div class="info-section">
-                <h2 class="text-primary">Наши контакты</h2>
-                <p><strong>Адрес:</strong> г. Москва, ул. Василия Пупкина, д.3</p>
-                <p><strong>Телефон:</strong> +7 (495) 123-45-67</p>
-                <p><strong>Email:</strong> mirea@efbo.com</p>
-                <p><strong>Часы работы:</strong> Пн-Пт с 9:00 до 18:00</p>
-                <div class="mt-3 p-3 bg-light rounded">
-                    <h5>Как до нас добраться:</h5>
-                    <p>Ближайшая станция метро — "Парк Победы". От метро 5 минут пешком. Вход со стороны внутреннего двора.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="feedback" class="page">
-            <div class="info-section">
-                <h2 class="text-primary">Обратная связь</h2>
-                <p>Заполните форму обратной связи, и наш специалист свяжется с вами в ближайшее время.</p>
-                <p>Мы отвечаем на все запросы в течение 24 часов в рабочие дни.</p>
-                <button class="btn btn-custom w-100 mt-3" data-bs-toggle="modal" data-bs-target="#feedbackModal">Открыть форму</button>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer class="text-center py-4 mt-4 border-top text-muted">
+        <footer class="text-center mt-5 text-muted">
             <p>&copy; 2023 Компания "Эффективные Решения". Все права защищены.</p>
         </footer>
     </div>
 
-    <!-- Bootstrap Modal -->
-    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="feedbackModalLabel">Обратная связь</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="contactForm">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" required placeholder="example@mail.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Телефон:</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" required placeholder="+7 (123) 456-78-90">
-                        </div>
-                        <div class="mb-3">
-                            <label for="date" class="form-label">Желаемая дата связи:</label>
-                            <input type="date" class="form-control" id="date" name="date" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="service" class="form-label">Выберите услугу:</label>
-                            <select class="form-select" id="service" name="service" required>
-                                <option value="">-- Выберите услугу --</option>
-                                <option value="development">Разработка сайтов</option>
-                                <option value="testing">Тестирование</option>
-                                <option value="consultation">Консультация</option>
-                                <option value="support">Поддержка</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Сообщение:</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Введите ваше сообщение..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-custom w-100">Отправить</button>
-                        <div class="success-message mt-3" id="successMessage">
-                            Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        const pages = document.querySelectorAll('.page');
-        const navLinks = document.querySelectorAll('[data-page]');
-        const contactForm = document.getElementById('contactForm');
-        const successMessage = document.getElementById('successMessage');
-        const phoneInput = document.getElementById('phone');
-
-        function showPage(pageId) {
-            pages.forEach(page => page.classList.remove('active'));
-            document.getElementById(pageId)?.classList.add('active');
-            navLinks.forEach(link => {
-                if (link.dataset.page === pageId) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const pageId = link.dataset.page;
-                showPage(pageId);
-            });
-        });
-
-        document.getElementById('scrollToFeedback').addEventListener('click', () => {
-            showPage('feedback');
-        });
-
-        contactForm?.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const inputs = ['email', 'phone', 'date', 'service', 'message'];
-            let isValid = true;
-            inputs.forEach(id => {
-                const el = document.getElementById(id);
-                if (!el.value.trim()) {
-                    el.classList.add('is-invalid');
-                    isValid = false;
-                } else {
-                    el.classList.remove('is-invalid');
-                }
-            });
-            if (isValid) {
-                successMessage.style.display = 'block';
-                contactForm.reset();
-                setTimeout(() => {
-                    const modal = bootstrap.Modal.getInstance(document.getElementById('feedbackModal'));
-                    modal.hide();
-                    successMessage.style.display = 'none';
-                }, 3000);
-            }
-        });
-
-        phoneInput?.addEventListener('input', function (e) {
-            let v = e.target.value.replace(/\D/g, '');
-            if (v.startsWith('8')) v = '7' + v.slice(1);
-            if (!v.startsWith('7')) v = '7' + v;
-            let f = '+7';
-            if (v.length > 1) f += ' (' + v.slice(1, 4);
-            if (v.length >= 5) f += ') ' + v.slice(4, 7);
-            if (v.length >= 8) f += '-' + v.slice(7, 9);
-            if (v.length >= 10) f += '-' + v.slice(9, 11);
-            e.target.value = f;
-        });
-    </script>
 </body>
 </html>
