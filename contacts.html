@@ -109,7 +109,7 @@
             <button class="btn btn-custom mt-4" onclick="feedbackModal.showModal()">Связаться с нами</button>
         </div>
 
-        <!-- Modal via <dialog> -->
+       
         <dialog id="feedbackModal">
             <div class="modal-header">
                 <h2>Обратная связь</h2>
@@ -157,12 +157,12 @@
         const modal = document.getElementById('feedbackModal');
         const form = document.getElementById('contactForm');
 
-        // Закрытие по клику на backdrop
+      
         modal.addEventListener('click', (e) => {
             if (e.target === modal) modal.close();
         });
 
-        // Отправка формы
+        
         form?.addEventListener('submit', (e) => {
             e.preventDefault();
             if (form.checkValidity()) {
@@ -174,7 +174,7 @@
             }
         });
 
-        // Маска телефона (упрощённо)
+        
         document.getElementById('phone')?.addEventListener('input', function (e) {
             let v = e.target.value.replace(/\D/g, '');
             if (v && !v.startsWith('7')) v = '7' + v;
