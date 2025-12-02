@@ -16,6 +16,13 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+        .team-member-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 0.375rem;
+            border-top-right-radius: 0.375rem;
+        }
     </style>
 </head>
 <body class="bg-light">
@@ -47,35 +54,54 @@
 
             <h3 class="mt-4 mb-3">Наша команда</h3>
             <div class="row g-4">
+                <!-- Владимир Науменко -->
                 <div class="col-md-3">
-                    <div class="card text-center p-3">
-                        <h4>Науменко Владимир</h4>
-                        <p class="text-muted">Генеральный директор</p>
+                    <div class="card team-member-card">
+                        <img src="images/photo_2025-05-31_23-16-56.jpg" alt="Науменко Владимир">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Науменко Владимир</h5>
+                            <p class="text-muted mb-0">Генеральный директор</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Алимов Альберт -->
                 <div class="col-md-3">
-                    <div class="card text-center p-3">
-                        <h4>Сотникова София</h4>
-                        <p class="text-muted">Технический директор</p>
+                    <div class="card team-member-card">
+                        <img src="images/photo_2025-11-25_10-26-08.jpg" alt="Алимов Альберт">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Алимов Альберт</h5>
+                            <p class="text-muted mb-0">Руководитель отдела продаж</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Сотникова София -->
                 <div class="col-md-3">
-                    <div class="card text-center p-3">
-                        <h4>Алимов Альберт</h4>
-                        <p class="text-muted">Руководитель отдела продаж</p>
+                    <div class="card team-member-card">
+                        <img src="images/photo_2025-11-25_10-26-23.jpg" alt="Сотникова София">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Сотникова София</h5>
+                            <p class="text-muted mb-0">Технический директор</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Топилина Полина -->
                 <div class="col-md-3">
-                    <div class="card text-center p-3">
-                        <h4>Топилина Полина</h4>
-                        <p class="text-muted">Специалист по аналитике</p>
+                    <div class="card team-member-card">
+                        <img src="images/photo_2025-11-25_10-26-36.jpg" alt="Топилина Полина">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Топилина Полина</h5>
+                            <p class="text-muted mb-0">Специалист по аналитике</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Карточка с каруселью (4 слайда) -->
+            <!-- Карусель с фотографиями команды -->
             <h3 class="mt-5 mb-3">Фотографии команды</h3>
-            <div class="card" style="width: 100%;">
+            <div class="card">
                 <div id="carouselTeamPhotos" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
