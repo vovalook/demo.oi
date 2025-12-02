@@ -16,12 +16,16 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .team-member-card img {
-            width: 100%;
-            height: 200px;
+        .team-slide img {
+            width: 150px;
+            height: 150px;
             object-fit: cover;
-            border-top-left-radius: 0.375rem;
-            border-top-right-radius: 0.375rem;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .carousel-item {
+            text-align: center;
+            padding: 2rem 1rem;
         }
     </style>
 </head>
@@ -53,85 +57,58 @@
             <p>Наша миссия — предоставлять качественные, надежные и инновационные IT-решения, которые реально работают и приносят прибыль нашим клиентам.</p>
 
             <h3 class="mt-4 mb-3">Наша команда</h3>
-            <div class="row g-4">
-                <!-- Владимир Науменко -->
-                <div class="col-md-3">
-                    <div class="card team-member-card">
-                        <img src="images/photo_2025-05-31_23-16-56.jpg" alt="Науменко Владимир">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Науменко Владимир</h5>
-                            <p class="text-muted mb-0">Генеральный директор</p>
-                        </div>
+
+            <!-- Карусель с карточками сотрудников -->
+            <div id="carouselTeam" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                <div class="carousel-inner">
+                    <!-- Слайд 1: Науменко Владимир -->
+                    <div class="carousel-item active">
+                        <img src="images/photo_2025-05-31_23-16-56.jpg" class="team-slide rounded-circle mb-3" alt="Науменко Владимир">
+                        <h4>Науменко Владимир</h4>
+                        <p class="text-muted">Генеральный директор</p>
+                    </div>
+
+                    <!-- Слайд 2: Алимов Альберт -->
+                    <div class="carousel-item">
+                        <img src="images/photo_2025-11-25_10-26-08.jpg" class="team-slide rounded-circle mb-3" alt="Алимов Альберт">
+                        <h4>Алимов Альберт</h4>
+                        <p class="text-muted">Руководитель отдела продаж</p>
+                    </div>
+
+                    <!-- Слайд 3: Сотникова София -->
+                    <div class="carousel-item">
+                        <img src="images/photo_2025-11-25_10-26-23.jpg" class="team-slide rounded-circle mb-3" alt="Сотникова София">
+                        <h4>Сотникова София</h4>
+                        <p class="text-muted">Технический директор</p>
+                    </div>
+
+                    <!-- Слайд 4: Топилина Полина -->
+                    <div class="carousel-item">
+                        <img src="images/photo_2025-11-25_10-26-36.jpg" class="team-slide rounded-circle mb-3" alt="Топилина Полина">
+                        <h4>Топилина Полина</h4>
+                        <p class="text-muted">Специалист по аналитике</p>
                     </div>
                 </div>
 
-                <!-- Алимов Альберт -->
-                <div class="col-md-3">
-                    <div class="card team-member-card">
-                        <img src="images/photo_2025-11-25_10-26-08.jpg" alt="Алимов Альберт">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Алимов Альберт</h5>
-                            <p class="text-muted mb-0">Руководитель отдела продаж</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- Кнопки навигации -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTeam" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Назад</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselTeam" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Вперёд</span>
+                </button>
 
-                <!-- Сотникова София -->
-                <div class="col-md-3">
-                    <div class="card team-member-card">
-                        <img src="images/photo_2025-11-25_10-26-23.jpg" alt="Сотникова София">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Сотникова София</h5>
-                            <p class="text-muted mb-0">Технический директор</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Топилина Полина -->
-                <div class="col-md-3">
-                    <div class="card team-member-card">
-                        <img src="images/photo_2025-11-25_10-26-36.jpg" alt="Топилина Полина">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Топилина Полина</h5>
-                            <p class="text-muted mb-0">Специалист по аналитике</p>
-                        </div>
-                    </div>
+                <!-- Индикаторы (опционально) -->
+                <div class="carousel-indicators" style="bottom: -30px;">
+                    <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Слайд 1"></button>
+                    <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="1" aria-label="Слайд 2"></button>
+                    <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="2" aria-label="Слайд 3"></button>
+                    <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="3" aria-label="Слайд 4"></button>
                 </div>
             </div>
 
-            <!-- Карусель с фотографиями команды -->
-            <h3 class="mt-5 mb-3">Фотографии команды</h3>
-            <div class="card">
-                <div id="carouselTeamPhotos" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/photo_2025-05-31_23-16-56.jpg" class="d-block w-100" alt="Фото команды 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/photo_2025-11-25_10-26-08.jpg" class="d-block w-100" alt="Фото команды 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/photo_2025-11-25_10-26-23.jpg" class="d-block w-100" alt="Фото команды 3">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/photo_2025-11-25_10-26-36.jpg" class="d-block w-100" alt="Фото команды 4">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselTeamPhotos" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselTeamPhotos" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Наши моменты</h5>
-                    <p class="card-text">Здесь вы можете увидеть, как мы работаем и отдыхаем вместе.</p>
-                    <a href="#" class="btn btn-primary">Подробнее о команде</a>
-                </div>
-            </div>
         </div>
 
         <footer class="text-center mt-5 text-muted">
