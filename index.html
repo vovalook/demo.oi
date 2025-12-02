@@ -17,7 +17,7 @@
             --focus-offset: 2px;
         }
 
-        /* Поддержка светлой/тёмной тем */
+
         :root { color-scheme: light dark; }
 
         *, *::before, *::after {
@@ -40,7 +40,6 @@
             min-height: 100dvh;
         }
 
-        /* Skip-link */
         .skip-link {
             position: absolute;
             top: 1rem;
@@ -59,7 +58,7 @@
             transform: translateY(0);
         }
 
-        /* Основной контейнер */
+     
         .container {
             max-width: 72rem;
             margin-inline: auto;
@@ -68,7 +67,7 @@
             width: 100%;
         }
 
-        /* Hero */
+   
         .hero {
             background: var(--primary-gradient);
             color: white;
@@ -79,7 +78,7 @@
             margin-bottom: 2rem;
         }
 
-        /* Навигация */
+        
         .nav {
             background: var(--surface);
             padding: 0.75rem;
@@ -120,7 +119,7 @@
             color: white;
         }
 
-        /* Основной контент */
+     
         .info-section {
             background: var(--surface);
             padding: 2rem;
@@ -133,7 +132,7 @@
             margin-top: 0;
         }
 
-        /* Кнопка */
+      
         .btn {
             display: inline-block;
             padding: 0.75rem 1.5rem;
@@ -157,7 +156,7 @@
             background: #1d4ed8;
         }
 
-        /* Footer */
+   
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -165,7 +164,7 @@
             padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
         }
 
-        /* Уважение к настройкам пользователя */
+        
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation: none !important;
@@ -188,7 +187,7 @@
             }
         }
 
-        /* Контраст */
+       
         a, button, .btn, .nav-link {
             outline-offset: var(--focus-offset);
         }
