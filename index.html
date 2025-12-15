@@ -4,194 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Главная — Эффективные Решения</title>
-    <style>
-        :root {
-            --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            --primary-color: #6a11cb;
-            --surface: #fff;
-            --text: #0b1020;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --btn-primary: #2563eb;
-            --focus-outline: 3px solid #2563eb;
-            --focus-offset: 2px;
-        }
-
-
-        :root { color-scheme: light dark; }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            margin: 0;
-            font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-            background: #f8fafc;
-            color: var(--text);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            min-height: 100svh;
-            min-height: 100dvh;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            z-index: 10000;
-            padding: 0.5rem 0.75rem;
-            background: #111;
-            color: white;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            transform: translateY(-150%);
-            transition: transform 0.2s;
-        }
-        .skip-link:focus,
-        .skip-link:focus-visible {
-            transform: translateY(0);
-        }
-
-     
-        .container {
-            max-width: 72rem;
-            margin-inline: auto;
-            padding-inline: clamp(1rem, calc(0.5rem + 1vw), 2rem);
-            padding-block: 1.5rem;
-            width: 100%;
-        }
-
-   
-        .hero {
-            background: var(--primary-gradient);
-            color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        
-        .nav {
-            background: var(--surface);
-            padding: 0.75rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            padding-block-start: calc(0.75rem + env(safe-area-inset-top));
-            padding-inline-start: calc(1rem + env(safe-area-inset-left));
-            padding-inline-end: calc(1rem + env(safe-area-inset-right));
-        }
-
-        .nav-link {
-            padding: 0.75rem 1.25rem;
-            text-decoration: none;
-            color: var(--text);
-            background: var(--surface);
-            border: 2px solid transparent;
-            border-radius: 0.5rem;
-            transition: background 0.2s;
-        }
-
-        .nav-link:hover,
-        .nav-link:focus {
-            background: #e6f3ff;
-            outline: none;
-        }
-
-        .nav-link:focus-visible {
-            border-color: var(--btn-primary);
-        }
-
-        .nav-link.active {
-            background: var(--btn-primary);
-            color: white;
-        }
-
-     
-        .info-section {
-            background: var(--surface);
-            padding: 2rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: 2rem;
-        }
-
-        .info-section h2 {
-            margin-top: 0;
-        }
-
-      
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: var(--btn-primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 0.5rem;
-            border: none;
-            font: inherit;
-            cursor: pointer;
-            transition: background 0.2s;
-            min-height: 44px; /* WCAG */
-        }
-
-        .btn:focus-visible {
-            outline: var(--focus-outline);
-            outline-offset: var(--focus-offset);
-        }
-
-        .btn:hover {
-            background: #1d4ed8;
-        }
-
-   
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            color: var(--text-muted);
-            padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
-        }
-
-        
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
-
-        @media (prefers-contrast: more) {
-            .btn, .nav-link {
-                outline: 2px solid currentColor;
-            }
-        }
-
-        /* На сенсорных устройствах — крупные цели */
-        @media (pointer: coarse) {
-            .nav-link,
-            .btn {
-                min-height: 44px;
-                padding-block: max(0.75rem, calc((44px - 1em) / 2));
-            }
-        }
-
-       
-        a, button, .btn, .nav-link {
-            outline-offset: var(--focus-offset);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a class="skip-link" href="#main">Перейти к основному содержимому</a>
@@ -199,7 +12,7 @@
     <div class="container">
         <header class="hero">
             <h1>Компания "Эффективные Решения"</h1>
-            <p class="opacity-90">Профессиональные IT-услуги для вашего бизнеса</p>
+            <p>Профессиональные IT-услуги для вашего бизнеса</p>
         </header>
 
         <nav class="nav" aria-label="Основная навигация">
@@ -210,7 +23,7 @@
 
         <main id="main">
             <section class="info-section">
-                <h2 class="text-primary">Добро пожаловать!</h2>
+                <h2>Добро пожаловать!</h2>
                 <p>Мы — команда профессионалов, предоставляющая широкий спектр IT-услуг для малого и среднего бизнеса. Наши решения помогут вам выйти на новый уровень эффективности и прибыльности.</p>
                 <p>Используйте навигацию выше, чтобы узнать больше о нас или связаться с нами.</p>
                 <a href="contacts.html" class="btn">Перейти к обратной связи</a>
